@@ -1,0 +1,11 @@
+.glow{
+
+box-shadow: 10px 10px 300px 5px rgba(255,255,255,1);
+bottom: -20rem;
+left: -10rem;
+}
+
+.moon{
+    bottom: -20rem;
+left: -10rem;
+}
