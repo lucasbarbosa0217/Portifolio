@@ -29,11 +29,21 @@ function Header() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.2}}
       style={{
-        backgroundColor: latestScroll > 300 ? "#2e1065" : "transparent",
-        padding: latestScroll > 300 ? "1rem" : "3rem 3rem 0 3rem"
+        backgroundColor: latestScroll > 15 ? "#2e1065" : "transparent",
+        padding: latestScroll > 15 ? "1rem" : "3rem 3rem 0 3rem"
       }}
-      className='w-full  fixed top-0 z-10 transition-all duration-500'>
-        Header
+      className='w-full flex justify-center flex-col fixed top-0 z-30 transition-all duration-500'>
+        <div className=' flex justify-end'>
+          
+        <nav>
+          <ul className='flex gap-4 text-lg'>
+            <li className='border border-stone-700 p-2 px-4 rounded-2xl'>Frontend</li>
+            <li className='border border-stone-700 p-2 px-4 rounded-2xl'>Backend</li>
+
+          </ul>
+        </nav>
+        
+        </div>
 
         {latestScroll > 300 ? "" : <hr className='mt-4 border-stone-800'></hr> }
     </motion.div>

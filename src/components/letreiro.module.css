@@ -1,0 +1,22 @@
+/* Core functionality */
+.animatedTextStrip{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  overflow: hidden;
+}
+.animatedTextStrip .marquee {
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+  max-width: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
