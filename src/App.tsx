@@ -1,8 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import MoonComponent from './Moon'
 import "./App.css"
 import Header from './components/Header'
-import { useScroll, motion, useTransform, useInView } from 'framer-motion';
+import { useScroll, motion, useTransform, useInView, useMotionValueEvent } from 'framer-motion';
+import SnapPage from './components/SnapPage';
+import { MouseScroll } from "@phosphor-icons/react"
 
 function App() {
 
@@ -10,50 +12,74 @@ function App() {
   // Detecta quando o componente está na viewport
   const isInView = useInView(ref, { once: true });
 
+
+  const [hidden, setHidden] = useState(false);
+  const [latestScroll, setLatestScroll] = useState(0);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    console.log(latest)
+    setLatestScroll(latest)
+  })
+
   return (
     <>
-      <div className='opacity-20 fixed'>
-        <div className=' fixed w-[30rem] h-[30rem] flex moon'>
+      <div className='noise-overlay'></div>
+      <div className='transition-all duration-500 fixed moon'
+        style={{ opacity: latestScroll > 200 ? "0.3" : "1" }}
+      >
+        <div className=' fixed w-[35rem] h-[35rem] flex moon transition-all duration-700'
+          style={{
+            right: latestScroll > 200 ? "-15rem" : "-5rem",
+            bottom: latestScroll > 200 ? "-20rem" : "-10rem",
+          }}
+
+        >
           <MoonComponent />
         </div>
 
-        <div className='w-[30rem] h-[30rem] fixed  glow rounded-full  '></div>
+        <div className='star-overlay transition-all duration-1000'
+          style={{
+            opacity: latestScroll > 200 ? "0" : "1",
+          }}
+        ></div>
+
+
+        <div className='w-[35rem] h-[35rem] fixed  glow rounded-full transition-all duration-700  '
+          style={{
+            right: latestScroll > 200 ? "-15rem" : "-5rem",
+            bottom: latestScroll > 200 ? "-20rem" : "-10rem",
+          }}
+        ></div>
       </div>
-      
-      <Header/>
 
-      <motion.div className='flex flex-col justify-center w-full h-screen items-center'
-        initial={{ opacity: 0, y: 50 }} // Estado inicial
-        whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na tela
-        viewport={{ once: true }} // Anima apenas uma vez
-        transition={{ duration: 1 }} // Duração da animação
-      >
-        <h1 className=' font-light text-6xl'>Portifólio do Lucas veyrr.</h1>
-        <h1 className=' font-light text-2xl'>Amo muito veyr ta ficando lindor</h1>
-        <a href="#secao2">Ir para Seção 1</a>
-      </motion.div>
+      <Header />
 
-      <motion.div className='flex flex-col justify-center w-full h-screen items-center'
-        initial={{ opacity: 0, y: 50 }} // Estado inicial
-        whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na tela
-        viewport={{ once: true }} // Anima apenas uma vez
-        transition={{ duration: 1 }} // Duração da animação
-        id="secao2"
-      >
-        <h1 className=' font-light text-6xl'>Seção 2</h1>
-      </motion.div>
+      <div>
+        <SnapPage>
+          <div className='flex flex-start sm:self-start md:self-center'>
+            <h1 className='text-7xl md:text-9xl h-full w-full mt-32 md:mt-0'>
+              <span className='font-light'>Oi!</span>
+              <span className='font-thin'> Eu sou o</span>
+              <span className='font-medium'> Lucas</span>
+              <span className='font-thin italic text-7xl pl-8'>:D</span>
+            </h1>
+          </div>
+       
+          <p className='absolute w-screen mb-12 flex justify-center bottom-0 left-0 animate-bounce'>
+            <MouseScroll weight={"light"} size={32} />
 
-      <motion.div className='flex flex-col justify-center w-full h-screen items-center'
-     
-        id="secao2"
-      >
-        <motion.h1 className=' font-light text-6xl'
-          initial={{ opacity: 0, y: 50 }} // Estado inicial
-          whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na tela
-          viewport={{ once: true }} // Anima apenas uma vez
-          transition={{ duration: 1 }} // Duração da animação
-        >Seção 2</motion.h1>
-      </motion.div>
+          </p>
+        </SnapPage>
+
+        <SnapPage>Sessão 1</SnapPage>
+
+
+        <SnapPage>Sessão 2</SnapPage>
+
+      </div>
 
     </>
 

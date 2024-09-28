@@ -2,13 +2,14 @@
 
 box-shadow: 0px 10px 100px 40px rgba(255,255,255,1);
 bottom: -10rem;
-left: -5rem;
+right: -5rem;
 }
 
 .moon{
     bottom: -10rem;
-left: -5rem;
+right: -5rem;
 }
+
 
 
 
@@ -51,4 +52,40 @@ left: -5rem;
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity; 
+
 }
+
+.snap {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+
+
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Para garantir que o ruído não interfira com a interação do usuário */
+  background-image: url('/noise.jpg'); /* Acesse o arquivo noise.jpg da pasta public */
+  background-size: ; /* Faz com que a imagem cubra toda a tela */
+  opacity: 0.05; /* Ajuste a opacidade conforme o efeito desejado */
+  z-index: 999;
+}
+
+.star-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Para garantir que o ruído não interfira com a interação do usuário */
+  background-image: url('/star.png'); /* Acesse o arquivo noise.jpg da pasta public */
+  background-size: ; /* Faz com que a imagem cubra toda a tela */
+  opacity: 0.05; /* Ajuste a opacidade conforme o efeito desejado */
+}
+

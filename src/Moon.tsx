@@ -1,37 +1,38 @@
-import React, { useRef, useEffect, useState, Suspense } from 'react';
-import { Canvas, ThreeElements } from '@react-three/fiber';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import { useRef, useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
-import { Mesh, TextureLoader } from 'three';
-import { motion } from 'framer-motion';
-import * as THREE from "three"
-import { OrbitControls } from '@react-three/drei';
+import { TextureLoader } from 'three';
 
-// Componente para a lua
+
 const Moon = ({ rotation }) => {
-    const moonRef = useRef<>();
-    const texture = useLoader(TextureLoader, '/moon.jpeg'); // Ajuste o caminho para o seu arquivo PNG
+    const moonRef = useRef();
+    const texture = useLoader(TextureLoader, '/moon.jpeg');
+    const [autoRotation, setAutoRotation] = useState(0);
 
-    // Atualiza a rotação da lua sempre que a prop 'rotation' mudar
     useEffect(() => {
         if (moonRef.current) {
-            moonRef.current.rotation.y = rotation;
-            moonRef.current.rotation.x = rotation / 3;
-
+            moonRef.current.rotation.y = rotation + autoRotation; 
+            moonRef.current.rotation.x = (rotation + autoRotation) / 3;
         }
-    }, [rotation]);
+    }, [rotation, autoRotation]);
+
+    useEffect(() => {
+        const animate = () => {
+            setAutoRotation(prev => prev + 0.001); 
+            requestAnimationFrame(animate);
+        };
+        animate();
+    }, []);
 
     return (
         <>
-            {/* Luz ambiente com maior intensidade */}
-            <ambientLight intensity={1.0} color="#ffffff" /> {/* Luz branca */}
-            {/* Luz spot com maior intensidade e cor branca */}
+            <ambientLight intensity={1.0} color="#ffffff" />
             <spotLight position={[5, 5, 5]} angle={0} intensity={1} color="#ffffff" />
-
-        
             <mesh ref={moonRef} position={[0, 0, 0]} castShadow receiveShadow>
-                <sphereGeometry args={[3.05, 16, 16]} />
+                <sphereGeometry args={[3.05, 32, 32]} />
                 <meshStandardMaterial map={texture}
-              
                 />
             </mesh>
         </>
@@ -41,7 +42,7 @@ const Moon = ({ rotation }) => {
 function MoonComponent() {
     const [rotation, setRotation] = useState(0);
     const handleScroll = (event) => {
-        const newRotation = window.scrollY * 0.005; // Calcula nova rotação com base na posição do scroll
+        const newRotation = window.scrollY * 0.005;
         setRotation(newRotation);
     };
     useEffect(() => {
@@ -54,11 +55,11 @@ function MoonComponent() {
 
     return (
 
-            <Canvas className=''>
+        <Canvas className=''>
 
-                <Moon rotation={rotation} />
-            </Canvas>
-           
+            <Moon rotation={rotation} />
+        </Canvas>
+
     );
 }
 
