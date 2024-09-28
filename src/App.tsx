@@ -1,25 +1,20 @@
-import React, { useRef, useState } from 'react'
+import { useState } from 'react'
 import MoonComponent from './Moon'
 import "./App.css"
 import Header from './components/Header'
-import { useScroll, motion, useTransform, useInView, useMotionValueEvent } from 'framer-motion';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
 import SnapPage from './components/SnapPage';
 import { MouseScroll } from "@phosphor-icons/react"
 
 function App() {
 
-  const ref = useRef(null);
-  // Detecta quando o componente está na viewport
-  const isInView = useInView(ref, { once: true });
 
 
-  const [hidden, setHidden] = useState(false);
   const [latestScroll, setLatestScroll] = useState(0);
 
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
     console.log(latest)
     setLatestScroll(latest)
   })
