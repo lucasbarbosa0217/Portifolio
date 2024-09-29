@@ -10,17 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@babylonjs/loaders": "^7.27.0",
     "@phosphor-icons/react": "^2.1.7",
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.8",
     "@types/three": "^0.169.0",
     "framer-motion": "^11.8.0",
-    "framer-motion-3d": "^11.8.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "swiper": "^11.1.14",
-    "swiper-react": "^1.0.0",
     "three": "^0.169.0"
   },
   "devDependencies": {

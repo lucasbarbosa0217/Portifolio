@@ -21,10 +21,10 @@ right: -5rem;
   left: 0;
   width: 100vw;
   height: 100dvh;
-  pointer-events: none; /* Para garantir que o ruído não interfira com a interação do usuário */
-  background-image: url('/noise.jpg'); /* Acesse o arquivo noise.jpg da pasta public */
-  background-size: ; /* Faz com que a imagem cubra toda a tela */
-  opacity: 0.05; /* Ajuste a opacidade conforme o efeito desejado */
+  pointer-events: none;
+  background-image: url('/noise.webp');
+  background-size: ; 
+  opacity: 0.05; 
   z-index: 999;
 }
 
@@ -34,9 +34,9 @@ right: -5rem;
   left: 0;
   width: 100%;
   height: 100dvh;
-  pointer-events: none; /* Para garantir que o ruído não interfira com a interação do usuário */
-  background-image: url('/star.png'); /* Acesse o arquivo noise.jpg da pasta public */
-  background-size: ; /* Faz com que a imagem cubra toda a tela */
-  opacity: 0.05; /* Ajuste a opacidade conforme o efeito desejado */
+  pointer-events: none;
+  background-image: url('/star.webp');
+  background-size: ; 
+  opacity: 0.05; 
 }
 

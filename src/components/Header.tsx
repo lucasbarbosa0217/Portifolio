@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import {  List } from '@phosphor-icons/react';
+import { List } from '@phosphor-icons/react';
 
 function Header() {
 
@@ -79,19 +79,20 @@ function Header() {
             {window.innerWidth > 700 ?
 
               <ul className='flex gap-4 text-lg text-stone-300'>
-                <a href="#home" >
-                  <li className='border border-stone-300 p-2 px-4 rounded-2xl'>Home</li>
-                </a>
-                <a href="#sobre" onClick={hideMenu}>
-                  <li className='border border-stone-300 p-2 px-4 rounded-2xl'>Sobre</li>
-                </a>
-                <a href="#front" onClick={hideMenu}>
-                  <li className='border border-stone-300 p-2 px-4 rounded-2xl'>Frontend</li>
-                </a>
-                <a href="#back" onClick={hideMenu}>
-                  <li className='border border-stone-300 p-2 px-4 rounded-2xl'>Backend</li>
-                </a>
+                <li className='border border-stone-300 p-2 px-4 rounded-2xl'>
+                  <a href="#home">Home</a>
+                </li>
+                <li className='border border-stone-300 p-2 px-4 rounded-2xl'>
+                  <a href="#sobre" onClick={hideMenu}>Sobre</a>
+                </li>
+                <li className='border border-stone-300 p-2 px-4 rounded-2xl'>
+                  <a href="#front" onClick={hideMenu}>Frontend</a>
+                </li>
+                <li className='border border-stone-300 p-2 px-4 rounded-2xl'>
+                  <a href="#back" onClick={hideMenu}>Backend</a>
+                </li>
               </ul>
+
 
               :
               <button className='flex items-center' onClick={() => setIsVisible(!isVisible)}>
@@ -117,20 +118,21 @@ function Header() {
           transition={{ type: 'spring', stiffness: 100, damping: 20, duration: 0.3 }}
           className='fixed z-50 w-[80vw] h-screen bg-stone-100 text-stone-900 bottom-0 right-0 touch-none'
         >
-          <ul className='flex flex-col  text-lg'>
-            <a href="#home" onClick={() => {setIsVisible(false)}}>
-              <li className=' bg-stone-200 p-2 px-4 hover:bg-stone-300'>Home</li>
-            </a>
-            <a href="#sobre" onClick={hideMenu}>
-              <li className=' bg-stone-200 p-2 px-4 hover:bg-stone-300'>Sobre</li>
-            </a>
-            <a href="#front" onClick={hideMenu}>
-              <li className=' bg-stone-200 p-2 px-4 hover:bg-stone-300'>Frontend</li>
-            </a>
-            <a href="#back" onClick={hideMenu}>
-              <li className=' bg-stone-200 p-2 px-4 hover:bg-stone-300'>Backend</li>
-            </a>
-            </ul>
+          <ul className='flex flex-col text-lg'>
+            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
+              <a href="#home" onClick={() => { setIsVisible(false) }}>Home</a>
+            </li>
+            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
+              <a href="#sobre" onClick={hideMenu}>Sobre</a>
+            </li>
+            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
+              <a href="#front" onClick={hideMenu}>Frontend</a>
+            </li>
+            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
+              <a href="#back" onClick={hideMenu}>Backend</a>
+            </li>
+          </ul>
+
         </motion.div>)}
 
       </AnimatePresence>

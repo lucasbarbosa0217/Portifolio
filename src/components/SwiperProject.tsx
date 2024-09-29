@@ -28,7 +28,7 @@ const SwiperProject = () => {
           repoUrl="https://github.com/Re-Aprender/FrontEnd"
           tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
           siteUrl='https://reaprenderlivros.netlify.app'
-          imageUrl="/reaprender.png"
+          imageUrl="/reaprender.webp"
         ></ProjectCard>
    
      </SwiperSlide>
@@ -38,7 +38,7 @@ const SwiperProject = () => {
         repoUrl="https://github.com/Re-Aprender/FrontEnd"
         tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
         siteUrl='https://reaprenderlivros.netlify.app'
-        imageUrl="/reaprender.png"
+        imageUrl="/reaprender.webp"
       ></ProjectCard></SwiperSlide>
    
       <SwiperSlide className="w-fit">     <ProjectCard
@@ -47,7 +47,7 @@ const SwiperProject = () => {
         repoUrl="https://github.com/Re-Aprender/FrontEnd"
         tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
         siteUrl='https://reaprenderlivros.netlify.app'
-        imageUrl="/reaprender.png"
+        imageUrl="/reaprender.webp"
       ></ProjectCard></SwiperSlide>
 
       <SwiperSlide className="w-fit">     <ProjectCard
@@ -56,7 +56,7 @@ const SwiperProject = () => {
         repoUrl="https://github.com/Re-Aprender/FrontEnd"
         tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
         siteUrl='https://reaprenderlivros.netlify.app'
-        imageUrl="/reaprender.png"
+        imageUrl="/reaprender.webp"
       ></ProjectCard></SwiperSlide>
  
     </Swiper>

@@ -40,13 +40,13 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} className={`rounded-t-2xl w-[25rem]  cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-t-2xl w-[25rem]  cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
             <div className='flex flex-col gap-2 p-4'>
-                <a onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
+                <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
                     <h1 className='inline text-2xl font-medium text-blue-400 hover:underline' >{projectName}</h1>
-                </a>
+                </button>
                 <p>{projectDescription}</p>
 
                 <TecnologiasComponent tecnologias={tecnologias}></TecnologiasComponent>
