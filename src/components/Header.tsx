@@ -1,19 +1,42 @@
-import  { useState } from 'react'
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import  { useEffect, useState } from 'react'
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import { Hamburger, List } from '@phosphor-icons/react';
 
 function Header() {
 
   const [hidden, setHidden] = useState(false);
   const [latestScroll, setLatestScroll] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
 
   const { scrollY } = useScroll();
+  const [isVisible, setIsVisible] = useState(false);
+
+
+  const resize = () => {
+    setWindowWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
+  }, [])
+
+
+  useEffect(() => {
+    if(windowWidth > 700){
+      setIsVisible(false)
+    }
+
+  }, [windowWidth])
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    console.log(latest)
     setLatestScroll(latest)
     if (previous === undefined) return
-    if (latest > previous && latest > 150) {
+    if (latest > previous && latest > 90) {
       setHidden(true);
     } else {
       setHidden(false)
@@ -21,6 +44,7 @@ function Header() {
   })
 
   return (
+    <>
     <motion.div
       variants={{
         visible: { y: "0" },
@@ -29,24 +53,66 @@ function Header() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.2}}
       style={{
-        backgroundColor: latestScroll > 15 ? "#2e1065" : "transparent",
-        padding: latestScroll > 15 ? "1rem" : "3rem 3rem 0 3rem"
+        backgroundColor: latestScroll > 90 ? "#2e1065" : "transparent",
+        padding: latestScroll > 90 ? "1rem" : "2rem 2rem 0 1.5rem"
       }}
-      className='w-full flex justify-center flex-col fixed top-0 z-30 transition-all duration-500'>
-        <div className=' flex justify-end'>
+      className='w-full flex justify-center flex-col fixed  top-0 z-30 transition-all duration-200'>
+        <div className=' flex justify-end items-center'>
           
         <nav>
-          <ul className='flex gap-4 text-lg'>
-            <li className='border border-stone-700 p-2 px-4 rounded-2xl'>Frontend</li>
-            <li className='border border-stone-700 p-2 px-4 rounded-2xl'>Backend</li>
+          {window.innerWidth > 700 ? 
+          
+            <ul className='flex gap-4 text-lg'>
+              <li className='border border-stone-100 p-2 px-4 rounded-2xl'>Frontend</li>
+              <li className='border border-stone-100 p-2 px-4 rounded-2xl'>Backend</li>
 
-          </ul>
+            </ul>
+
+            : 
+            <button className='flex items-center' onClick={() => setIsVisible(!isVisible)}>
+                <List size={42}/>
+              </button>
+            
+        }
+         
         </nav>
         
         </div>
 
-        {latestScroll > 300 ? "" : <hr className='mt-4 border-stone-800'></hr> }
+        {latestScroll > 80 ? "" : <hr className='mt-4 border-stone-800'></hr> }
+
+     
     </motion.div>
+
+      <AnimatePresence>
+        {isVisible && (<motion.div
+          initial={{ x: '200vw' }} 
+          animate={{ x: 0 }} 
+          exit={{ x: '200vw' }}
+          transition={{ type: 'spring', stiffness: 100, damping: 20, duration: 0.3 }} 
+          className='fixed z-50 w-[80vw] h-screen bg-stone-100 bottom-0 right-0 touch-none'
+        >
+          Div Animada
+        </motion.div>)}
+        
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isVisible && (<motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5}} 
+          exit={{ opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 20, duration: 0.3 }} 
+          className='fixed z-40 w-screen h-screen bg-stone-900 bottom-0 right-0 cursor-pointer touch-none'
+          onClick={() => setIsVisible(!isVisible)}
+        >
+     
+        </motion.div>)}
+
+      </AnimatePresence>
+
+      
+    </>
   )
 }
 

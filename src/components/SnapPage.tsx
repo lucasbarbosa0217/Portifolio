@@ -7,7 +7,7 @@ interface SnapProps {
 
 const SnapPage: React.FC<SnapProps> = ({children}: SnapProps) => {
   return (
-    <motion.div className='snap-center container m-auto snap-normal relative z-20 flex justify-center w-full h-screen items-center
+    <motion.div className=' container m-auto  relative z-20 flex justify-center w-full h-screen items-center
         p-4 
       '
       >

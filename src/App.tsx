@@ -15,8 +15,9 @@ function App() {
 
   const { scrollY } = useScroll();
 
+  
+
   useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log(latest)
     setLatestScroll(latest)
   })
 
