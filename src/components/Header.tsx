@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { Hamburger, List } from '@phosphor-icons/react';
+import {  List } from '@phosphor-icons/react';
 
 function Header() {
 
