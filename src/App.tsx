@@ -6,6 +6,9 @@ import { useScroll, useMotionValueEvent } from 'framer-motion';
 import SnapPage from './components/SnapPage';
 import { MouseScroll } from "@phosphor-icons/react"
 import Letreiro from './components/Letreiro';
+import ProjectCard from './components/ProjectCard';
+import Tecnologias from './models/Tecnologias';
+import SwiperProject from './components/SwiperProject';
 
 function App() {
 
@@ -58,7 +61,7 @@ function App() {
 
       <Header />
 
-      <SnapPage>
+      <SnapPage id="home">
         <div className='flex flex-start flex-col sm:self-start md:self-center'>
           <h1 className='text-7xl md:text-9xl mt-32 md:mt-0'>
             <span className='font-light'>Oi!</span>
@@ -71,20 +74,28 @@ function App() {
           </p>
         </div>
 
-        <p className='absolute w-full mb-12 flex justify-center bottom-0 left-0 animate-bounce'>
-          Rola a tela pra baixo!
+        <p className='absolute w-full mb-12 flex justify-center items-center gap-1 bottom-0 left-0 animate-bounce'>
+          Role a tela pra baixo!
 
           <MouseScroll weight={"light"} size={32} />
         </p>
       </SnapPage>
 
-      <SnapPage>
+      <SnapPage id="sobre" grid={false}>
+        <Letreiro>QUEM É LUCAS BARBOSA?</Letreiro>
+
+      </SnapPage>
+
+      <SnapPage id="front" grid={false}>
         <Letreiro>MEUS PROJETOS FRONTEND</Letreiro>
+        <p>Meus projetos Front-End</p>
+          <SwiperProject/>
+      
 
       </SnapPage>
 
 
-      <SnapPage>
+      <SnapPage id="back" grid={false}>
         <Letreiro>MEUS PROJETOS BACKEND</Letreiro>
 
 

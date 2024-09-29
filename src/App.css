@@ -6,7 +6,7 @@ right: -5rem;
 }
 
 html{
-
+scroll-behavior: smooth;
   scroll-snap-type: y proximity;
 }
 
