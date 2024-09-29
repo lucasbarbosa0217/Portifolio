@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Navigation, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import ProjectCard from './ProjectCard'

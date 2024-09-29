@@ -6,8 +6,7 @@ import { useScroll, useMotionValueEvent } from 'framer-motion';
 import SnapPage from './components/SnapPage';
 import { MouseScroll } from "@phosphor-icons/react"
 import Letreiro from './components/Letreiro';
-import ProjectCard from './components/ProjectCard';
-import Tecnologias from './models/Tecnologias';
+
 import SwiperProject from './components/SwiperProject';
 
 function App() {
