@@ -13,4 +13,7 @@ export default interface Tecnologias {
         Android?: boolean;
         Maven?: boolean;
         Gradle?: boolean;
+        FramerMotion?: boolean;
+        Javascript?: boolean
+        Figma?: boolean
 }

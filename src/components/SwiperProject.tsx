@@ -1,11 +1,16 @@
 
-import { Navigation, Scrollbar } from 'swiper/modules'
+import { Navigation, Scrollbar, Mousewheel } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import ProjectCard from './ProjectCard'
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import "./Swiper.css"
+import React, { Children } from 'react';
 
-const SwiperProject = () => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const SwiperProject: React.FC<Props> = ({children}) => {
   return (
 
     <Swiper
@@ -13,51 +18,21 @@ const SwiperProject = () => {
       spaceBetween={32}
       scrollbar={{
         hide: false,
+        draggable: true,
       }}
-      pagination={{
-        clickable: true,
+      mousewheel={{
+        enabled: true
       }}
-      navigation={true}
-      modules={[Scrollbar, Navigation]}
-      className="mySwiper container flex flex-start pb-8 bookList pr-9"
+      modules={[Scrollbar, Navigation, Mousewheel]}
+      className="mySwiper container flex h-[35rem] max-h-max pb-12 bookList "
     >
-     <SwiperSlide className="w-fit">
-        <ProjectCard
-          projectName='Re;Aprender'
-          projectDescription="Re;Aprender é o projeto de conclusão do Bootcamp da Java e React da Generation Brazil. É um e-commerce de livros didáticos."
-          repoUrl="https://github.com/Re-Aprender/FrontEnd"
-          tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
-          siteUrl='https://reaprenderlivros.netlify.app'
-          imageUrl="/reaprender.webp"
-        ></ProjectCard>
-   
-     </SwiperSlide>
-      <SwiperSlide className="w-fit">   <ProjectCard
-        projectName='LuMusic'
-        projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e pastel."
-        repoUrl="https://github.com/Re-Aprender/FrontEnd"
-        tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
-        siteUrl='https://reaprenderlivros.netlify.app'
-        imageUrl="/reaprender.webp"
-      ></ProjectCard></SwiperSlide>
-   
-      <SwiperSlide className="w-fit">     <ProjectCard
-        projectName='LuMusic'
-        projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e pastel."
-        repoUrl="https://github.com/Re-Aprender/FrontEnd"
-        tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
-        siteUrl='https://reaprenderlivros.netlify.app'
-        imageUrl="/reaprender.webp"
-      ></ProjectCard></SwiperSlide>
 
-      <SwiperSlide className="w-fit">     <ProjectCard
-        projectName='LuMusic'
-        projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e pastel."
-        repoUrl="https://github.com/Re-Aprender/FrontEnd"
-        tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
-        siteUrl='https://reaprenderlivros.netlify.app'
-        imageUrl="/reaprender.webp"
-      ></ProjectCard></SwiperSlide>
+      {Children.map(children, (child, index) => (
+        <SwiperSlide className="" key={index}>
+          {child}
+        </SwiperSlide>
+      ))}
+      
  
     </Swiper>
   )

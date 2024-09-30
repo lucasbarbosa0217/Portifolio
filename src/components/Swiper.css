@@ -1,0 +1,17 @@
+.swiper-scrollbar.swiper-scrollbar-horizontal{bottom: 0; height: 0.725rem; background: #292524}
+.swiper-scrollbar-drag{background: #A8A29E;}
+
+
+.swiper-wrapper{
+    display:flex;
+     align-items: stretch;
+  flex-direction: row;
+
+}
+
+.swiper-slide{
+    display:flex !important;
+    flex-grow: 1 !important;
+    width: fit-content;
+    height: 100%;
+}

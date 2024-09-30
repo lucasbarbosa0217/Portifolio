@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='bg-stone-800 max-w-[25rem] w-full max-h-fit rounded-2xl overflow-hidden' >
+        <div className='bg-stone-800 flex flex-col flex-grow  w-[25rem] min-h-[25rem] rounded-2xl overflow-hidden ' >
             <div className='relative flex flex-col items-center overflow-hidden justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
@@ -32,9 +32,9 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
                             transition={{ duration: 0.2 }}
                             className=' bg-stone-700 flex gap-2 text-3xl rounded-2xl p-2 px-4 z-50 absolute '
                         >
-                            <a href={repoUrl}>  <GithubLogo className='hover:scale-125 transition-all duration-500' /></a>
+                            <a href={repoUrl} target='_blank'>  <GithubLogo className='hover:scale-125 transition-all duration-500' /></a>
 
-                            {siteUrl && <a href={siteUrl}>
+                            {siteUrl && <a href={siteUrl} target='_blank'>
                                 <Globe className='hover:scale-125 transition-all duration-500' />
                             </a>}
 
@@ -43,11 +43,14 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
                 <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-t-2xl w-[25rem]  cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
-            <div className='flex flex-col gap-2 p-4'>
-                <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
-                    <h1 className='inline text-2xl font-medium text-blue-400 hover:underline' >{projectName}</h1>
-                </button>
-                <p>{projectDescription}</p>
+            <div className='flex flex-col gap-2 p-4 justify-between flex-grow'>
+                <div className='flex flex-col gap-2'>
+                    <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
+                        <h1 className='inline text-2xl font-medium text-blue-400 hover:underline' >{projectName}</h1>
+                    </button>
+                    <p>{projectDescription}</p>
+                </div>
+          
 
                 <TecnologiasComponent tecnologias={tecnologias}></TecnologiasComponent>
             </div>
