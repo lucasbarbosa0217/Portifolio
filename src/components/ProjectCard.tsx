@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='bg-stone-800 flex flex-col flex-grow  w-[25rem] min-h-[25rem] rounded-2xl overflow-hidden ' >
+        <div className='bg-stone-800 flex flex-col flex-grow  w-[24rem] min-h-[25rem] rounded-2xl overflow-hidden ' >
             <div className='relative flex flex-col items-center overflow-hidden justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
@@ -40,7 +40,7 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-t-2xl w-[25rem]  cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-t-2xl w-[24rem] h-[13.5rem] object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
             <div className='flex flex-col gap-2 p-4 justify-between flex-grow'>

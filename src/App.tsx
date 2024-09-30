@@ -134,6 +134,15 @@ function App() {
             imageUrl="/CHAT.webp"
           ></ProjectCard>
 
+          <ProjectCard
+            projectName='Gerador de Senha'
+            projectDescription="Site simples de geração de senhas, estilizado com a biblioteca 7.css, inpirada no design aero do Windows 7"
+            repoUrl="https://www.figma.com/community/file/1422726907446420885/y2k-chat"
+            siteUrl='https://gerador-senha-theta.vercel.app/'
+            tecnologias={{ Html: true, Css: true, Javascript: true }}
+            imageUrl="/seven.webp"
+          ></ProjectCard>
+
           </SwiperProject>
       
 
