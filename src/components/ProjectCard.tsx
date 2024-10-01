@@ -21,8 +21,8 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='bg-stone-800 flex flex-col flex-grow  w-[24rem] min-h-[25rem] rounded-2xl overflow-hidden ' >
-            <div className='relative flex flex-col items-center overflow-hidden justify-center'>
+        <div className='flex flex-col md:flex-row items-center  w-full max-w-[120rem] flex-grow p-4 border-r border-stone-600 verflow-hidden ' >
+            <div className='relative flex flex-col items-center flex-grow  justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
                         <motion.div
@@ -40,15 +40,15 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-t-2xl w-[24rem] h-[13.5rem] object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-2xl w-[24rem] h-[13.5rem] object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
-            <div className='flex flex-col gap-2 p-4 justify-between flex-grow'>
+            <div className='flex flex-col gap-2 p-6 w-full justify-between max-w-[25rem] '>
                 <div className='flex flex-col gap-2'>
                     <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
                         <h1 className='inline text-2xl font-medium text-blue-400 hover:underline' >{projectName}</h1>
                     </button>
-                    <p>{projectDescription}</p>
+                    <p className='max-w-[20rem]'>{projectDescription}</p>
                 </div>
           
 

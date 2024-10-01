@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { List } from '@phosphor-icons/react';
+import { List, X } from '@phosphor-icons/react';
 
 function Header() {
 
@@ -69,7 +69,7 @@ function Header() {
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.2 }}
         style={{
-          backgroundColor: latestScroll > 90 ? "#2e1065" : "transparent",
+          backgroundColor: latestScroll > 90 ? "#000000" : "transparent",
           padding: latestScroll > 90 ? "1rem" : "2rem 2rem 0 1.5rem"
         }}
         className='w-full flex justify-center flex-col fixed  top-0 z-30 transition-all duration-200'>
@@ -116,8 +116,11 @@ function Header() {
           animate={{ x: 0 }}
           exit={{ x: '200vw' }}
           transition={{ type: 'spring', stiffness: 100, damping: 20, duration: 0.3 }}
-          className='fixed z-50 w-[80vw] h-screen bg-stone-100 text-stone-900 bottom-0 right-0 touch-none'
+          className='fixed z-50 w-[80vw] h-[100dvh] flex flex-col  bg-stone-100 text-stone-900 bottom-0 right-0 touch-none'
         >
+          <button className='flex items-center w-fit justify-end self-end p-4' onClick={() => setIsVisible(!isVisible)}>
+            <X size={42} />
+          </button>
           <ul className='flex flex-col text-lg'>
             <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
               <a href="#home" onClick={() => { setIsVisible(false) }}>Home</a>

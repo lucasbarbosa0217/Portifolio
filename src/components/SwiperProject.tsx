@@ -28,7 +28,7 @@ const SwiperProject: React.FC<Props> = ({children}) => {
     >
 
       {Children.map(children, (child, index) => (
-        <SwiperSlide className="" key={index}>
+        <SwiperSlide className="md:w-fit" key={index}>
           {child}
         </SwiperSlide>
       ))}

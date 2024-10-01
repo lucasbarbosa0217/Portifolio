@@ -10,7 +10,7 @@ const TecnologiasComponent: React.FC<PropsTecnologias> = ({ tecnologias }) => {
     const icons = {
         Spring: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
         React: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-        Typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+        Typescript: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
         Javascript: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
         FramerMotion: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg",
         NodeJs: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
@@ -28,7 +28,7 @@ const TecnologiasComponent: React.FC<PropsTecnologias> = ({ tecnologias }) => {
     };
 
     return (
-            <div className='flex flex-row justify-end gap-2 w-full'>
+            <div className='flex flex-row justify-end gap-2 w-fit self-end rounded-lg'>
                 {Object.keys(tecnologias).map((tech) => {
                     if (tecnologias[tech as keyof typeof tecnologias]) {
                         return (
@@ -36,7 +36,7 @@ const TecnologiasComponent: React.FC<PropsTecnologias> = ({ tecnologias }) => {
                                 key={tech}
                                 src={icons[tech as keyof typeof icons]}
                                 alt={tech}
-                                style={{ width: '2rem', height: '2rem' }}
+                                style={{ width: '2rem', height: '2rem'}}
                             />
                         );
                     }
