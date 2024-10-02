@@ -9,6 +9,8 @@ import Letreiro from './components/Letreiro';
 
 import SwiperProject from './components/SwiperProject';
 import ProjectCard from './components/ProjectCard';
+import EarthComponent from './components/Earth';
+import ListBackend from './components/ListBackend';
 
 function App() {
 
@@ -88,7 +90,6 @@ function App() {
 
       <SnapPage id="front" grid={false}>
         <Letreiro>MEUS PROJETOS FRONTEND</Letreiro>
-        <p>Meus projetos Front-End</p>
           <SwiperProject>
 
           <ProjectCard
@@ -144,15 +145,18 @@ function App() {
           ></ProjectCard>
 
           </SwiperProject>
-      
+
+          
+          <div className='w-full h-[20rem] '>
+
+            <EarthComponent/>
+          </div>
 
       </SnapPage>
 
 
       <SnapPage id="back" grid={false}>
-        <Letreiro>MEUS PROJETOS BACKEND</Letreiro>
-
-
+          <ListBackend/>
       </SnapPage>
 
 

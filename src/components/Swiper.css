@@ -1,4 +1,4 @@
-.swiper-scrollbar.swiper-scrollbar-horizontal{bottom: 0; height: 0.725rem; background: #292524}
+.swiper-scrollbar.swiper-scrollbar-horizontal{bottom: 0; height: 12px; background: #292524}
 .swiper-scrollbar-drag{background: #A8A29E;}
 
 
@@ -14,3 +14,5 @@
 
     height: 100%;
 }
+
+
