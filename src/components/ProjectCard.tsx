@@ -21,8 +21,8 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='flex flex-col md:flex-row items-center  w-full max-w-[120rem] flex-grow p-4 border-r border-stone-600 verflow-hidden ' >
-            <div className='relative flex flex-col items-center flex-grow  justify-center'>
+        <div className='flex flex-col lg:flex-row items-center  w-fit min-w-[20rem] max-w-[120rem] flex-grow  border-stone-600 verflow-hidden ' >
+            <div className='relative flex  f flex-col items-center  justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
                         <motion.div
@@ -40,10 +40,10 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-2xl w-[24rem] h-[13.5rem] object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-2xl  w-[20rem] h-[11.25rem]  object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
-            <div className='flex flex-col gap-2 p-6 w-full justify-between max-w-[25rem] '>
+            <div className='flex flex-col gap-2  pl-4 w-full justify-between max-w-[25rem] flex-shrink-[3]'>
                 <div className='flex flex-col gap-2'>
                     <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
                         <h1 className='inline text-2xl font-medium text-blue-400 hover:underline' >{projectName}</h1>

@@ -91,24 +91,24 @@ function App() {
       <SnapPage id="front" grid={false}>
         <Letreiro>MEUS PROJETOS FRONTEND</Letreiro>
           <SwiperProject>
+            <ProjectCard
+              projectName='Re;Aprender'
+              projectDescription="E-commerce de livros didáticos. Projeto integrador do Bootcamp de Java e React da Generation Brazil"
+              repoUrl="https://github.com/Re-Aprender/FrontEnd"
+              tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
+              siteUrl='https://reaprenderlivros.netlify.app'
+              imageUrl="/reaprender.webp"
+            ></ProjectCard>
 
-          <ProjectCard
-            projectName='Re;Aprender'
-            projectDescription="E-commerce de livros didáticos. Projeto integrador do Bootcamp de Java e React da Generation Brazil"
-            repoUrl="https://github.com/Re-Aprender/FrontEnd"
-            tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
-            siteUrl='https://reaprenderlivros.netlify.app'
-            imageUrl="/reaprender.webp"
-          ></ProjectCard>
-
-          <ProjectCard
-            projectName='LuMusic'
-            projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e  cores pastéis."
-            repoUrl="https://github.com/lucasbarbosa0217/Lumusic"
-            tecnologias={{ React: true, Javascript: true,FramerMotion:true, Css: true, Tailwind: true }}
-            siteUrl='https://lumusic.vercel.app/'
-            imageUrl="/lulumusic.webp"
-          ></ProjectCard>
+            <ProjectCard
+              projectName='LuMusic'
+              projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e  cores pastéis."
+              repoUrl="https://github.com/lucasbarbosa0217/Lumusic"
+              tecnologias={{ React: true, Javascript: true, FramerMotion: true, Css: true, Tailwind: true }}
+              siteUrl='https://lumusic.vercel.app/'
+              imageUrl="/lulumusic.webp"
+            ></ProjectCard>
+         
 
           <ProjectCard
             projectName='LuLucasBlog'
@@ -147,16 +147,17 @@ function App() {
           </SwiperProject>
 
           
-          <div className='w-full h-[20rem] '>
-
-            <EarthComponent/>
-          </div>
+     
 
       </SnapPage>
 
 
       <SnapPage id="back" grid={false}>
           <ListBackend/>
+        <div className='w-full h-[20rem] '>
+
+          <EarthComponent />
+        </div>
       </SnapPage>
 
 
