@@ -21,8 +21,8 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='flex flex-col lg:flex-row items-center  w-fit min-w-[20rem] max-w-[120rem] flex-grow  border-stone-600 verflow-hidden ' >
-            <div className='relative flex  f flex-col items-center  justify-center'>
+        <div className='flex flex-col lg:flex-row items-center  min-w-[20rem] w-full gap-3 justify-center flex-grow  border-stone-600 verflow-hidden ' >
+            <div className='relative flex  f flex-col items-center justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
                         <motion.div

@@ -20,7 +20,7 @@ const SwiperProject: React.FC<Props> = ({ children }) => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}  // Anima apenas quando o contêiner está visível
           transition={{
-            delay: isInView ? index * 0.3 : 0,  // Aplica o delay baseado no índice quando visível
+            delay: isInView ? index * 0.3 : () => {return 0},  // Aplica o delay baseado no índice quando visível
             duration: 0.5,
             ease: 'easeInOut',
           }}
