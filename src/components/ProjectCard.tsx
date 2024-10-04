@@ -40,7 +40,7 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`rounded-2xl  w-[20rem] h-[11.25rem]  object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`  w-[20rem] h-[11.25rem]  object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
             <div className='flex flex-col gap-2  pl-4 w-full justify-between max-w-[25rem] flex-shrink-[3]'>

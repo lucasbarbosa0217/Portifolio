@@ -11,6 +11,7 @@ import SwiperProject from './components/SwiperProject';
 import ProjectCard from './components/ProjectCard';
 import EarthComponent from './components/Earth';
 import ListBackend from './components/ListBackend';
+import {motion} from "framer-motion"
 
 function App() {
 
@@ -153,11 +154,29 @@ function App() {
 
 
       <SnapPage id="back" grid={false}>
-          <ListBackend/>
-        <div className='w-full h-[20rem] '>
+          <h2 className='font-mono text-8xl'>MEUS PROJETOS BACKEND
+            <motion.span
+              animate={{
+                opacity: [0, 0, 1, 1],
+                transition: {
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatDelay: 0,
+                  ease: "linear",
+                  times: [0, 0.5, 0.5, 1]
+                }
+              }}
+            >_</motion.span>
 
-          <EarthComponent />
+
+          </h2>
+
+          <ListBackend />
+          <div className='w-full h-[20rem] '>
+
+            <EarthComponent />
         </div>
+  
       </SnapPage>
 
 

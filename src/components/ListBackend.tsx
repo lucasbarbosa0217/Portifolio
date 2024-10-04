@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 const ListBackend = () => {
   return (
-      <div className='w-full md:w-1/2 container rounded-xl bg-stone-200 text-stone-900 max-h-[50rem] overflow-y-auto relative'>
+      <div className='w-full container bg-stone-200 text-stone-900 max-h-[50rem] overflow-y-auto relative font-mono'>
           <div className='border border-stone-900 p-4 text-3xl sticky top-0 bg-stone-300 '>MEUS PROJETOS <span className='font-bold'>BACKEND</span> </div>
         
        
