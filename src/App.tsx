@@ -9,7 +9,6 @@ import Letreiro from './components/Letreiro';
 
 import SwiperProject from './components/SwiperProject';
 import ProjectCard from './components/ProjectCard';
-import EarthComponent from './components/Earth';
 import ListBackend from './components/ListBackend';
 import {motion} from "framer-motion"
 
@@ -19,7 +18,10 @@ function App() {
 
   const [latestScroll, setLatestScroll] = useState(0);
 
-  const { scrollY } = useScroll();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+
+  const { scrollY, scrollYProgress } = useScroll();
 
   
 
@@ -27,24 +29,30 @@ function App() {
     setLatestScroll(latest)
   })
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log(latest)
+    setScrollProgress(latest)
+  })
+
+
   return (
     <>
 
       <div className='noise-overlay'></div>
       <div className='star-overlay transition-all duration-1000'
         style={{
-          opacity: latestScroll > 200 ? "0" : "1",
+          opacity: latestScroll > 200 && scrollProgress < 0.9  ? "0" : "1",
         }}
       ></div>
 
 
       <div className='transition-all duration-500 fixed moon'
-        style={{ opacity: latestScroll > 200 ? "0.3" : "1" }}
+        style={{ opacity: latestScroll > 200 && scrollProgress < 0.9 ? "0.3" : "1" }}
       >
         <div className=' fixed w-[35rem] h-[35rem] flex moon transition-all duration-700'
           style={{
-            right: latestScroll > 200 ? "-15rem" : "-5rem",
-            bottom: latestScroll > 200 ? "-20rem" : "-10rem",
+            right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
+            bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
           }}
 
         >
@@ -54,8 +62,8 @@ function App() {
      
         <div className='w-[35rem] h-[35rem] fixed  glow rounded-full transition-all duration-700  '
           style={{
-            right: latestScroll > 200 ? "-15rem" : "-5rem",
-            bottom: latestScroll > 200 ? "-20rem" : "-10rem",
+            right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
+            bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
           }}
         ></div>
       </div>
@@ -154,29 +162,33 @@ function App() {
 
 
       <SnapPage id="back" grid={false}>
-          <h2 className='font-mono text-8xl'>MEUS PROJETOS BACKEND
-            <motion.span
-              animate={{
-                opacity: [0, 0, 1, 1],
-                transition: {
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatDelay: 0,
-                  ease: "linear",
-                  times: [0, 0.5, 0.5, 1]
-                }
-              }}
-            >_</motion.span>
+        <div className=' grid grid-cols-1 md:grid-cols-2 w-full  items-centerflex-grow gap-8'>
+        
 
 
-          </h2>
+          <div className='flex-col flex order-1 md:order-2 gap-16'>
+            <h2 className='font-mono text-7xl md:text-8xl'>MEUS PROJETOS BACKEND
+              <motion.span
+                animate={{
+                  opacity: [0, 0, 1, 1],
+                  transition: {
+                    duration: 1,
+                    repeat: Infinity,
+                    repeatDelay: 0,
+                    ease: "linear",
+                    times: [0, 0.5, 0.5, 1]
+                  }
+                }}
+              >_</motion.span>
 
-          <ListBackend />
-          <div className='w-full h-[20rem] '>
 
-            <EarthComponent />
+            </h2>
+
+            <ListBackend />
+          </div>
+
         </div>
-  
+     
       </SnapPage>
 
 
