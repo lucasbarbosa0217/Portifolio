@@ -49,7 +49,7 @@ function App() {
       <div className='transition-all duration-500 fixed moon'
         style={{ opacity: latestScroll > 200 && scrollProgress < 0.9 ? "0.3" : "1" }}
       >
-        <div className=' fixed w-[35rem] h-[35rem] flex moon transition-all duration-700'
+        <div className=' fixed w-[40rem] h-[40rem] max-h-[80vh] max-w-[80vh]  flex moon transition-all duration-700'
           style={{
             right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
             bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
@@ -60,7 +60,7 @@ function App() {
         </div>
 
      
-        <div className='w-[35rem] h-[35rem] fixed  glow rounded-full transition-all duration-700  '
+        <div className='w-[40rem] h-[40rem] max-h-[80vh] max-w-[80vh] fixed  glow rounded-full transition-all duration-700  '
           style={{
             right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
             bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
@@ -72,7 +72,7 @@ function App() {
 
       <Header />
 
-      <SnapPage id="home">
+      <SnapPage id="home" full={true}>
         <div className='flex flex-start flex-col sm:self-start md:self-center'>
           <h1 className='text-7xl md:text-9xl mt-32 md:mt-0'>
             <span className='font-light'>Oi!</span>
