@@ -13,7 +13,7 @@ const SwiperProject: React.FC<Props> = ({ children }) => {
   const isInView = useInView(ref, { once: true });  // A animação acontece apenas na primeira vez que o contêiner é visível
 
   return (
-    <div ref={ref} className="mySwiper m-auto bookList flex lg:grid   justify-start lg:justify-center lg:grid-cols-2 max-h-[50rem] overflow-y-auto  gap-y-8 gap-x-6  w-full overflow-x-auto">
+    <div ref={ref} className="mySwiper m-auto bookList flex lg:grid pb-8   justify-start lg:justify-center lg:grid-cols-2 max-h-[50rem] overflow-y-auto  gap-y-16 gap-x-8 md:p-8  w-full overflow-x-auto">
       {Children.map(children, (child, index) => (
         <motion.div
           key={index}
@@ -24,7 +24,7 @@ const SwiperProject: React.FC<Props> = ({ children }) => {
             duration: 0.5,
             ease: 'easeInOut',
           }}
-          className=''
+          className='flex flex-col'
         >
           {child}
         </motion.div>

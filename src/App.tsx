@@ -11,6 +11,7 @@ import SwiperProject from './components/SwiperProject';
 import ProjectCard from './components/ProjectCard';
 import ListBackend from './components/ListBackend';
 import {motion} from "framer-motion"
+import LucasCards from './components/LucasCards';
 
 function App() {
 
@@ -39,9 +40,9 @@ function App() {
     <>
 
       <div className='noise-overlay'></div>
-      <div className='star-overlay transition-all duration-1000'
+      <div className='star-overlay animate-pulse  transition-all'
         style={{
-          opacity: latestScroll > 200 && scrollProgress < 0.9  ? "0" : "1",
+          display: latestScroll > 200 && scrollProgress < 0.9  ? "none" : "inherit",
         }}
       ></div>
 
@@ -49,7 +50,7 @@ function App() {
       <div className='transition-all duration-500 fixed moon'
         style={{ opacity: latestScroll > 200 && scrollProgress < 0.9 ? "0.3" : "1" }}
       >
-        <div className=' fixed w-[40rem] h-[40rem] max-h-[80vh] max-w-[80vh]  flex moon transition-all duration-700'
+        <div className=' fixed w-[50rem] h-[50rem] max-h-[80vh] max-w-[80vh]  flex moon transition-all duration-700'
           style={{
             right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
             bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
@@ -60,7 +61,7 @@ function App() {
         </div>
 
      
-        <div className='w-[40rem] h-[40rem] max-h-[80vh] max-w-[80vh] fixed  glow rounded-full transition-all duration-700  '
+        <div className='w-[50rem] h-[50rem] max-h-[80vh] max-w-[80vh] fixed  glow rounded-full transition-all duration-700  '
           style={{
             right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
             bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
@@ -93,7 +94,7 @@ function App() {
       </SnapPage>
 
       <SnapPage id="sobre" grid={false}>
-        <Letreiro>QUEM É LUCAS BARBOSA?</Letreiro>
+          <LucasCards/>
 
       </SnapPage>
 

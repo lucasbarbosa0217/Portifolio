@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='flex flex-col lg:flex-row items-center  min-w-[20rem] w-full gap-3 justify-center flex-grow  border-stone-600 verflow-hidde scale-90 ' >
+        <div className='flex flex-col lg:flex-row  items-center justify-start   min-w-[24rem] w-full gap-8  flex-grow   border-stone-600 overflow-hidden  ' >
             <div className='relative flex  f flex-col items-center justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
@@ -40,15 +40,15 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} alt={"Print do projeto "+projectName} className={`  w-[20rem] rounded h-[11.25rem]  object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto "+projectName} className={` sm:w-full  md:w-[32rem] rounded h-[18rem] object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
-            <div className='flex flex-col gap-2  pl-4 w-full justify-between max-w-[25rem] flex-shrink-[3]'>
+            <div className='flex flex-col gap-2   w-full justify-between max-w-[35rem] flex-shrink-[3] justify-between flex-grow'>
                 <div className='flex flex-col gap-2'>
                     <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
-                        <h1 className='inline text-2xl font-medium text-blue-400 hover:underline' >{projectName}</h1>
+                        <h1 className='inline text-4xl font-light text-blue-400 hover:underline' >{projectName}</h1>
                     </button>
-                    <p className='max-w-[20rem] text-sm font-light mb-8'>{projectDescription}</p>
+                    <p className='max-w-[100rem] font-thin mb-8'>{projectDescription}</p>
                 </div>
           
 

@@ -26,7 +26,7 @@ right: -5rem;
   background-size: ; 
   opacity: 0.05; 
   z-index: 999;
-}
+mix-blend-mode: hard-light;}
 
 .star-overlay {
   position: fixed;
@@ -37,7 +37,8 @@ right: -5rem;
   pointer-events: none;
   background-image: url('/star.webp');
   background-size: ; 
-  opacity: 0.05; 
+  
+  
 }
 
 
@@ -51,10 +52,12 @@ right: -5rem;
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
   height: 8px;
-  width: 12px;
+  width: 6px;
 }
 *::-webkit-scrollbar-track {
   background-color: #2D2928;
+    border-radius: 10px;
+
 }
 
 *::-webkit-scrollbar-track:hover {

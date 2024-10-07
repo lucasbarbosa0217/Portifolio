@@ -1,6 +1,6 @@
 import TecnologiasComponent from './TecnologiasComponent'
-import 'swiper/css';
-import 'swiper/css/pagination';
+
+
 const ListBackend = () => {
   return (
       <div className='w-full container bg-stone-200 text-stone-900 max-h-[50rem] overflow-y-auto relative font-mono'>
