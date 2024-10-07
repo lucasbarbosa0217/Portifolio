@@ -38,7 +38,7 @@ const TecnologiasComponent: React.FC<PropsTecnologias> = ({ tecnologias }) => {
                                 src={icons[tech as keyof typeof icons]}
                                 alt={tech}
                                 className='rounded-full'
-                                style={{ width: '3rem', height: '3rem', padding: "0.5rem", background: "white"}}
+                                style={{ width: '2rem', height: '2rem', padding: "0.5rem", background: "white"}}
                             />
                         );
                     }

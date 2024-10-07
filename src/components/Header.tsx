@@ -121,20 +121,38 @@ function Header() {
           <button className='flex items-center w-fit justify-end self-end p-4' onClick={() => setIsVisible(!isVisible)}>
             <X size={42} />
           </button>
-          <ul className='flex flex-col text-lg'>
-            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
-              <a href="#home" onClick={() => { setIsVisible(false) }}>Home</a>
-            </li>
-            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
-              <a href="#sobre" onClick={hideMenu}>Sobre</a>
-            </li>
-            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
-              <a href="#front" onClick={hideMenu}>Frontend</a>
-            </li>
-            <li className='bg-stone-200 p-2 px-4 hover:bg-stone-300'>
-              <a href="#back" onClick={hideMenu}>Backend</a>
-            </li>
-          </ul>
+          <div className='flex flex-col text-lg'>
+            <a
+              className='bg-stone-200 p-2 px-4 hover:bg-stone-300'
+              href="#home"
+              onClick={() => { setIsVisible(false); }}
+            >
+              Home
+            </a>
+            <a
+              className='bg-stone-200 p-2 px-4 hover:bg-stone-300'
+              href="#sobre"
+              onClick={hideMenu}
+            >
+              Sobre
+            </a>
+            <a
+              className='bg-stone-200 p-2 px-4 hover:bg-stone-300'
+              href="#front"
+              onClick={hideMenu}
+            >
+              Frontend
+            </a>
+            <a
+              className='bg-stone-200 p-2 px-4 hover:bg-stone-300'
+              href="#back"
+              onClick={hideMenu}
+            >
+              Backend
+            </a>
+          </div>
+
+
 
         </motion.div>)}
 

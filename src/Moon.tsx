@@ -8,7 +8,7 @@ import { TextureLoader } from 'three';
 
 const Moon = ({ rotation }) => {
     const moonRef = useRef();
-    const texture = useLoader(TextureLoader, '/moon.jpeg');
+    const texture = useLoader(TextureLoader, '/moon.webp');
     const [autoRotation, setAutoRotation] = useState(0);
 
     useEffect(() => {

@@ -50,9 +50,9 @@ function App() {
       <div className='transition-all duration-500 fixed moon'
         style={{ opacity: latestScroll > 200 && scrollProgress < 0.9 ? "0.3" : "1" }}
       >
-        <div className=' fixed w-[50rem] h-[50rem] max-h-[80vh] max-w-[80vh]  flex moon transition-all duration-700'
+        <div className=' fixed w-[50rem] h-[50rem] max-h-[65vh] max-w-[65vh]  flex moon transition-all duration-700'
           style={{
-            right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
+            right: latestScroll > 200 && scrollProgress < 0.9 ? "-10rem" : "-5rem",
             bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
           }}
 
@@ -61,9 +61,9 @@ function App() {
         </div>
 
      
-        <div className='w-[50rem] h-[50rem] max-h-[80vh] max-w-[80vh] fixed  glow rounded-full transition-all duration-700  '
+        <div className='w-[50rem] h-[50rem] max-h-[65vh] max-w-[65vh] fixed  glow rounded-full transition-all duration-700  '
           style={{
-            right: latestScroll > 200 && scrollProgress < 0.9 ? "-15rem" : "-5rem",
+            right: latestScroll > 200 && scrollProgress < 0.9 ? "-10rem" : "-5rem",
             bottom: latestScroll > 200 && scrollProgress < 0.9 ? "-20rem" : "-10rem",
           }}
         ></div>
@@ -86,6 +86,8 @@ function App() {
           </p>
         </div>
 
+
+
         <p className='absolute w-full mb-12 flex justify-center items-center gap-1 bottom-0 left-0 animate-bounce'>
           Role a tela pra baixo!
 
@@ -93,10 +95,14 @@ function App() {
         </p>
       </SnapPage>
 
-      <SnapPage id="sobre" grid={false}>
+      <SnapPage id="sobre">
           <LucasCards/>
+        <p className='self-center text-lg max-w-[30rem] text-justify font-light'>Sou desenvolvedor de software focado em criar <i>interfaces intuitivas</i>. Tenho conhecimento em <strong>React</strong> e <strong>desenvolvimento mobile</strong> para Android com <strong>Java</strong>. Participei de <i>projetos acadêmicos premiados</i> pela <strong>Microsoft</strong> e <strong>Magalu</strong>. Atualmente, estou me aprofundando em <strong>back-end</strong> com <i>Spring Boot</i>. Sou <strong>comunicativo e colaborativo</strong>, sempre buscando <i>soluções eficientes</i>.</p>     
+          <img src="./shootingstar.gif" className='absolute right-0 w-72 opacity-40'></img>
+        <img src="./shootingstar.gif" className='absolute bottom-0 w-72 opacity-30'></img>
 
-      </SnapPage>
+
+         </SnapPage>
 
       <SnapPage id="front" grid={false}>
         <Letreiro>MEUS PROJETOS FRONTEND</Letreiro>
@@ -167,8 +173,8 @@ function App() {
         
 
 
-          <div className='flex-col flex order-1 md:order-2 gap-16'>
-            <h2 className='font-mono text-7xl md:text-8xl'>MEUS PROJETOS BACKEND
+          <div className='flex-col flex order-1 md:order-2 gap-8'>
+            <h2 className='font-mono text-7xl'>MEUS PROJETOS BACKEND
               <motion.span
                 animate={{
                   opacity: [0, 0, 1, 1],
@@ -189,7 +195,8 @@ function App() {
           </div>
 
         </div>
-     
+        <img src="./2iiB.gif" className='absolute right-0 h-[90dvh] opacity-30 pointer-events-none z-0'></img>
+
       </SnapPage>
 
 

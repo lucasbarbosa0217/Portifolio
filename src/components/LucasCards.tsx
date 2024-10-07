@@ -6,7 +6,7 @@ import 'swiper/css/effect-cards';
 
 
 // import required modules
-import { EffectCards } from 'swiper/modules';
+import { EffectCards, Autoplay, Navigation } from 'swiper/modules';
 
 export default function LucasCards() {
     return (
@@ -14,12 +14,18 @@ export default function LucasCards() {
             <Swiper
                 effect={'cards'}
                 grabCursor={true}
-                modules={[EffectCards]}
-                className="mySwiper"
+                autoplay={{
+                    delay: 5500,
+                    disableOnInteraction: false,
+                }}
+                navigation={true}
+
+                modules={[EffectCards, Autoplay, Navigation]}
+                className="mySwiper self-center"
             >
-                <SwiperSlide className="flex items-center justify-center bg-red"><img src="./lucaspro.png" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center bg-red"><img src="./lucaspessoal.png" /></SwiperSlide>
-                <SwiperSlide className="flex items-center justify-center bg-red"><img src="./lucasolhos.png" /></SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center bg-red"><img src="./lucaspro.webp" /></SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center bg-red"><img src="./lucaspessoal.webp" /></SwiperSlide>
+                <SwiperSlide className="flex items-center justify-center bg-red"><img src="./lucasolhos.webp" /></SwiperSlide>
              
             </Swiper>
         </>
