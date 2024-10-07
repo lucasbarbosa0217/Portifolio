@@ -75,15 +75,13 @@ function App() {
 
       <SnapPage id="home" full={true}>
         <div className='flex flex-start flex-col sm:self-start md:self-center'>
-          <h1 className='text-7xl md:text-9xl mt-32 md:mt-0'>
+          <h1 className='text-7xl md:text-9xl mt-24 md:mt-0'>
             <span className='font-light'>Oi!</span>
             <span className='font-thin'> Eu sou o<br/></span>
             <span className='font-medium'> Lucas</span>
             <span className='font-thin italic text-7xl '> :D</span>
           </h1>
-          <p>
-            Sou um desenvolvedor fullstack! e gosto um pouquinho de design tbm..!
-          </p>
+       
         </div>
 
 
@@ -174,7 +172,7 @@ function App() {
 
 
           <div className='flex-col flex order-1 md:order-2 gap-8'>
-            <h2 className='font-mono text-7xl'>MEUS PROJETOS BACKEND
+            <h2 className='font-mono text-6xl md:text-7xl'>MEUS PROJETOS BACKEND
               <motion.span
                 animate={{
                   opacity: [0, 0, 1, 1],
