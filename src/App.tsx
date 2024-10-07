@@ -75,11 +75,10 @@ function App() {
 
       <SnapPage id="home" full={true}>
         <div className='flex flex-start flex-col sm:self-start md:self-center'>
-          <h1 className='text-7xl md:text-9xl mt-24 md:mt-0'>
+          <h1 className='text-7xl md:text-9xl mt-16 md:mt-0'>
             <span className='font-light'>Oi!</span>
             <span className='font-thin'> Eu sou o<br/></span>
             <span className='font-medium'> Lucas</span>
-            <span className='font-thin italic text-7xl '> :D</span>
           </h1>
        
         </div>
