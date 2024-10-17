@@ -14,6 +14,10 @@ export default interface Tecnologias {
         Maven?: boolean;
         Gradle?: boolean;
         FramerMotion?: boolean;
-        Javascript?: boolean
-        Figma?: boolean
-}
+        Javascript?: boolean;
+        Figma?: boolean;
+        Mongo?: boolean;
+        Mongoose?: boolean;
+        Postgres?: boolean;
+        Bootstrap?: boolean
+};

@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
     const [linksOpen, setLinksOpen] = useState(false);
 
     return (
-        <div className='flex flex-col   lg:flex-row  items-center justify-start    w-fit gap-8  flex-grow   border-stone-600 overflow-hidden  ' >
+        <div className='flex flex-col   lg:flex-row  items-center justify-start    w-fit gap-8 gap-x-4  flex-grow   border-stone-600 overflow-hidden  ' >
             <div className='relative flex w-[calc(100vw-4rem)] md:w-fit   f flex-col items-center justify-center'>
                 <AnimatePresence>
                     {linksOpen &&
@@ -40,15 +40,15 @@ const ProjectCard: FC<ProjectCardProps> = ({projectDescription, projectName, rep
 
                         </motion.div>}
                 </AnimatePresence>
-                <img src={imageUrl} alt={"Print do projeto " + projectName} className={`w-full h-[10rem]  md:w-[22rem] rounded object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
+                <img src={imageUrl} alt={"Print do projeto " + projectName} className={`w-full h-[12rem]  md:w-[20rem] rounded object-cover cursor-pointer transition-all duration-500 ${linksOpen && "blur-sm opacity-50"}`} onClick={() => { setLinksOpen(!linksOpen) }}></img>
 
             </div>
-            <div className='flex flex-col gap-2   w-full  max-w-[35rem] flex-shrink-[3] justify-between flex-grow lg:scale-90'>
+            <div className='flex flex-col gap-2   w-full  max-w-[20rem] flex-shrink-[3] justify-between flex-grow '>
                 <div className='flex flex-col gap-2'>
                     <button onClick={() => { setLinksOpen(!linksOpen) }} className='cursor-pointer w-fit'>
                         <h1 className='inline text-3xl font-light text-blue-400 hover:underline' >{projectName}</h1>
                     </button>
-                    <p className='max-w-[100rem] font-thin mb-8 font-sm'>{projectDescription}</p>
+                    <p className='max-w-[25rem] font-thin mb-8 font-sm'>{projectDescription}</p>
                 </div>
           
 

@@ -94,7 +94,7 @@ function App() {
 
       <SnapPage id="sobre">
           <LucasCards/>
-        <p className='self-center text-lg max-w-[30rem] text-justify font-light'>Sou desenvolvedor de software focado em criar <i>interfaces intuitivas</i>. Tenho conhecimento em <strong>React</strong> e <strong>desenvolvimento mobile</strong> para Android com <strong>Java</strong>. Participei de <i>projetos acadêmicos premiados</i> pela <strong>Microsoft</strong> e <strong>Magalu</strong>. Atualmente, estou me aprofundando em <strong>back-end</strong> com <i>Spring Boot</i>. Sou <strong>comunicativo e colaborativo</strong>, sempre buscando <i>soluções eficientes</i>.</p>     
+        <p className='self-center text-lg max-w-[30rem] text-center font-light'>Sou desenvolvedor de software focado em criar <i>interfaces intuitivas</i>. Tenho conhecimento em <strong>React</strong> e <strong>desenvolvimento mobile</strong> para Android com <strong>Java</strong>. Participei de <i>projetos acadêmicos premiados</i> pela <strong>Microsoft</strong> e <strong>Magalu</strong>. Atualmente, estou me aprofundando em <strong>back-end</strong> com <i>Spring Boot</i>. Sou <strong>comunicativo e colaborativo</strong>, sempre buscando <i>soluções eficientes</i>.</p>     
           <img src="./shootingstar.gif" className='absolute right-0 w-72 opacity-40'></img>
         <img src="./shootingstar.gif" className='absolute bottom-0 w-72 opacity-30'></img>
 
@@ -115,12 +115,21 @@ function App() {
 
             <ProjectCard
               projectName='LuMusic'
-              projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e  cores pastéis."
+              projectDescription="LuMusic é uma plataforma de streaming de músicas com foco no visual fofo e cores pastel"
               repoUrl="https://github.com/lucasbarbosa0217/Lumusic"
               tecnologias={{ React: true, Javascript: true, FramerMotion: true, Css: true, Tailwind: true }}
               siteUrl='https://lumusic.vercel.app/'
               imageUrl="/lulumusic.webp"
             ></ProjectCard>
+
+          <ProjectCard
+            projectName='Healthhub'
+            projectDescription="LuMusic é uma plataforma de gerenciamento de prontuários médicos com base na FHIR da Microsft. Projeto foi premiado como segundo lugar na NEXT Fiap 2023 em parceria com a Microsoft."
+            repoUrl="https://github.com/lucasbarbosa0217/health-hub"
+            tecnologias={{ React: true, Javascript: true, FramerMotion: true, Css: true}}
+            siteUrl='https://health-hub-rosy.vercel.app/'
+            imageUrl="/healthhub.webp"
+          ></ProjectCard>
          
 
           <ProjectCard
@@ -131,15 +140,23 @@ function App() {
             siteUrl='https://lulucasblog.vercel.app/'
             imageUrl="/lulucasblog.webp"
           ></ProjectCard>
-
+     
           <ProjectCard
             projectName='Pokédex Android'
-            projectDescription="Projeto Android nativo feito com vase na api Pokéapi. Pokemons podem ser salvos localmente usando o banco de dados  Android Room."
+            projectDescription="Projeto Android nativo feito com base na api Pokéapi. Pokemons podem ser salvos localmente usando o banco de dados  Android Room."
             repoUrl="https://github.com/lucasbarbosa0217/Pokedex"
             tecnologias={{ Java: true, Android: true, Gradle: true}}
             imageUrl="/pokedex.webp"
           ></ProjectCard>
 
+
+          <ProjectCard
+            projectName='Herbix'
+            projectDescription="Projeto Android Kotlin. Conceito de um aplicativo que usa inteligência artificial para identificar pagras em plantas."
+            repoUrl="https://github.com/lucasbarbosa0217/Herbix---Kotlin"
+            tecnologias={{ Kotlin: true, Android: true, Gradle: true }}
+            imageUrl="/herbix.webp"
+          ></ProjectCard>
           <ProjectCard
             projectName='Y2K Chat'
             projectDescription="Prototipação no Figma de um chat inspirado no MSN e Windows Live Messenger"
@@ -151,11 +168,56 @@ function App() {
           <ProjectCard
             projectName='Gerador de Senha'
             projectDescription="Site simples de geração de senhas, estilizado com a biblioteca 7.css, inpirada no design aero do Windows 7"
-            repoUrl="https://www.figma.com/community/file/1422726907446420885/y2k-chat"
+            repoUrl="https://github.com/lucasbarbosa0217/gerador-senha"
             siteUrl='https://gerador-senha-theta.vercel.app/'
             tecnologias={{ Html: true, Css: true, Javascript: true }}
             imageUrl="/seven.webp"
           ></ProjectCard>
+
+          <ProjectCard
+            projectName='Acessibilidade 4 Devs'
+            projectDescription="Site HTMl focado em acessbilidade e tags semânticas. Plataforma para desenvolvedores compatilharem dicas de desenvolvimento acessível. Projeto foi premiado como segundo lugar na NEXT Fiap 2022 em parceria com a Magalu."
+            repoUrl="https://github.com/lucasbarbosa0217/Acessibilidade-For-Devs"
+            siteUrl='http://acessibilidadefordevs.vercel.app/'
+            tecnologias={{ Html: true, Css: true, Javascript: true }}
+            imageUrl="/acessibilidade.webp"
+          ></ProjectCard>
+
+          <ProjectCard
+            projectName='Traveller'
+            projectDescription="Site HTMl de viagens feito durante o primeiro ano na graduação de Sistemas para Internet na FIAP. "
+            repoUrl="https://github.com/lucasbarbosa0217/traveller-nuvens"
+            siteUrl='http://traveller-nuvens.vercel.app/'
+            tecnologias={{ Html: true, Css: true, Javascript: true }}
+            imageUrl="/traveller.webp"
+          ></ProjectCard>
+
+          <ProjectCard
+            projectName='Farmazil'
+            projectDescription="Site feito durante o curso da  Generation, foi uma atividade avaliativa para a criação de um site em apenas 3 horas."
+            repoUrl="https://github.com/lucasbarbosa0217/farmacia"
+            siteUrl='https://farmacia-three.vercel.app/'
+            tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
+            imageUrl="/farmazil.webp"
+          ></ProjectCard>
+          <ProjectCard
+            projectName='Agenda'
+            projectDescription="Site feito com Server Side Rendering com EJS e Express; Uma simples agenda telefônica estilizada com Bootstrap"
+            repoUrl="https://github.com/lucasbarbosa0217/AGENDA-JSX-EXPRESS-NODE"
+            siteUrl='https://agenda-rir4.onrender.com/'
+            tecnologias={{ NodeJs: true, Javascript: true, Bootstrap: true, Mongo: true, Mongoose: true }}
+            imageUrl="/agenda.webp"
+          ></ProjectCard>
+          <ProjectCard
+            projectName='React Notes'
+            projectDescription="Site feito durante a NLW Expert de React. Usei para aprender conceitos básicos do React com Typescript"
+            repoUrl="https://github.com/lucasbarbosa0217/NLW-NOTES-REACT"
+            siteUrl='https://nlw-notes-react-delta.vercel.app/'
+            tecnologias={{ React: true, Typescript: true, Css: true, Tailwind: true }}
+            imageUrl="/notes.webp"
+          ></ProjectCard>
+
+     
 
           </SwiperProject>
 
