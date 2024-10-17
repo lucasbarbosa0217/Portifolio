@@ -40,6 +40,9 @@ function App() {
     <>
 
       <div className='noise-overlay'></div>
+      <div className='nuvem'></div>
+
+
       <div className='star-overlay animate-pulse  transition-all'
         style={{
           display: latestScroll > 200 && scrollProgress < 0.9  ? "none" : "inherit",
@@ -260,7 +263,7 @@ function App() {
 
 
 
-    
+
       
 
 

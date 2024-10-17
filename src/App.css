@@ -28,6 +28,22 @@ right: -5rem;
   z-index: 999;
 mix-blend-mode: hard-light;}
 
+.nuvem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70vw;
+  height: 15vw;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url('/nuvem.png');
+ background-repeat: no-repeat;
+ background-size: contain;
+  z-index: 2;
+}
+
+
+
 .star-overlay {
   position: fixed;
   top: 0;
