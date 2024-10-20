@@ -34,7 +34,7 @@ const TecnologiasComponent: React.FC<PropsTecnologias> = ({ tecnologias }) => {
 
 
     return (
-            <div className='flex flex-row justify-end gap-2 w-fit self-end rounded-lg'>
+            <div className='flex flex-row justify-end gap-2 w-fit self-end rounded-lg tecnologias'>
                 {Object.keys(tecnologias).map((tech) => {
                     if (tecnologias[tech as keyof typeof tecnologias]) {
                         return (

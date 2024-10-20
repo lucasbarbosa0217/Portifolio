@@ -4,14 +4,14 @@ import "./App.css"
 import Header from './components/Header'
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import SnapPage from './components/SnapPage';
-import { MouseScroll } from "@phosphor-icons/react"
+import { GithubLogo, LinkedinLogo, MouseScroll } from "@phosphor-icons/react"
 import Letreiro from './components/Letreiro';
 
 import SwiperProject from './components/SwiperProject';
 import ProjectCard from './components/ProjectCard';
 import ListBackend from './components/ListBackend';
 import {motion} from "framer-motion"
-import LucasCards from './components/LucasCards';
+import LucasCards from './LucasCards';
 
 function App() {
 
@@ -40,7 +40,6 @@ function App() {
     <>
 
       <div className='noise-overlay'></div>
-      <div className='nuvem'></div>
 
 
       <div className='star-overlay animate-pulse  transition-all'
@@ -97,7 +96,15 @@ function App() {
 
       <SnapPage id="sobre">
           <LucasCards/>
-        <p className='self-center text-lg max-w-[30rem] text-center font-light'>Sou desenvolvedor de software focado em criar <i>interfaces intuitivas</i>. Tenho conhecimento em <strong>React</strong> e <strong>desenvolvimento mobile</strong> para Android com <strong>Java</strong>. Participei de <i>projetos acadêmicos premiados</i> pela <strong>Microsoft</strong> e <strong>Magalu</strong>. Atualmente, estou me aprofundando em <strong>back-end</strong> com <i>Spring Boot</i>. Sou <strong>comunicativo e colaborativo</strong>, sempre buscando <i>soluções eficientes</i>.</p>     
+        <p className='self-center text-lg max-w-[30rem] text-center font-light'>Sou desenvolvedor de software focado em criar <i>interfaces intuitivas</i>. Tenho conhecimento em <strong>React</strong> e <strong>desenvolvimento mobile</strong> para Android com <strong>Java</strong>. Participei de <i>projetos acadêmicos premiados</i> pela <strong>Microsoft</strong> e <strong>Magalu</strong>. Atualmente, estou me aprofundando em <strong>back-end</strong> com <i>Spring Boot</i>. Sou <strong>comunicativo e colaborativo</strong>, sempre buscando <i>soluções eficientes</i>.<br></br>
+          <div className='flex w-full items-center mt-4 justify-center gap-4'>
+            <a href="https://linkedin.com/in/lucasbarbosa0217" target="_blank" className='text-blue-400 underline text-xl flex justify-center items-center gap-1'><LinkedinLogo size={32} />Meu Linkedin</a>
+            <a href="https://github.com/lucasbarbosa0217" target="_blank" className='text-blue-400 underline text-xl flex gap-1 items-center'> <GithubLogo size={32} />Meu Github</a>
+          </div>
+         
+
+
+        </p>     
           <img src="./shootingstar.gif" className='absolute right-0 w-72 opacity-40'></img>
         <img src="./shootingstar.gif" className='absolute bottom-0 w-72 opacity-30'></img>
 
@@ -132,6 +139,15 @@ function App() {
             tecnologias={{ React: true, Javascript: true, FramerMotion: true, Css: true}}
             siteUrl='https://health-hub-rosy.vercel.app/'
             imageUrl="/healthhub.webp"
+          ></ProjectCard>
+
+          <ProjectCard
+            projectName='Clocktask'
+            projectDescription="É um planejador visual de tarefas diárias que usa manipulação de SVGs e salva os dados na IndexedDb"
+            repoUrl="https://github.com/lucasbarbosa0217/ClockTask"
+            tecnologias={{ React: true, Javascript: true, FramerMotion: true, Css: true }}
+            siteUrl='https://clock-task-self.vercel.app/'
+            imageUrl="/clocktask.webp"
           ></ProjectCard>
          
 

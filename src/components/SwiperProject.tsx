@@ -13,7 +13,7 @@ const SwiperProject: React.FC<Props> = ({ children }) => {
   const isInView = useInView(ref, { once: true });  
 
   return (
-    <div ref={ref} className="mySwiper bookList flex md:grid pb-8 mt-16  md:px-0 snap-x snap-mandatory justify-start md:justify-center md:grid-cols-2  lg:grid-cols-3 max-h-[50rem] md:overflow-y-auto  gap-y-16 gap-x-8  w-full overflow-x-auto">
+    <div ref={ref} className="mySwiper bookList flex md:grid pb-8 mt-16  md:px-0 snap-x snap-mandatory justify-start md:justify-center md:grid-cols-2  lg:grid-cols-3  2xl:grid-cols-4  max-h-[50rem] md:overflow-y-auto  gap-y-16 gap-x-8  w-full overflow-x-auto">
       {Children.map(children, (child, index) => (
         <motion.div
           key={index}

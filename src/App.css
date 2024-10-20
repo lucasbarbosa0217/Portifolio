@@ -23,24 +23,11 @@ right: -5rem;
   height: 100dvh;
   pointer-events: none;
   background-image: url('/noise.webp');
-  background-size: ; 
   opacity: 0.05; 
   z-index: 999;
 mix-blend-mode: hard-light;}
 
-.nuvem {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70vw;
-  height: 15vw;
-  pointer-events: none;
-  opacity: 0.5;
-  background-image: url('/nuvem.png');
- background-repeat: no-repeat;
- background-size: contain;
-  z-index: 2;
-}
+
 
 
 
@@ -52,7 +39,6 @@ mix-blend-mode: hard-light;}
   height: 100dvh;
   pointer-events: none;
   background-image: url('/star.webp');
-  background-size: ; 
   
   
 }
@@ -95,4 +81,10 @@ mix-blend-mode: hard-light;}
 
 *::-webkit-scrollbar-thumb:active {
   background-color: #A5A09C;
+}
+
+
+.backenditem .tecnologias img {
+  border: 1px solid black;
+  transform: scale(1.2);
 }
